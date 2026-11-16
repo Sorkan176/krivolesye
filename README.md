@@ -18,13 +18,13 @@
 Клонировать репозиторий:
 
 ```bash
-git clone <URL-репозитория>
+git clone https://github.com/Sorkan176/krivolesye.git
 ```
 
 Перейти в директорию проекта:
 
 ```bash
-cd <название-проекта>
+cd krivolesye
 ```
 
 Установить зависимости:
