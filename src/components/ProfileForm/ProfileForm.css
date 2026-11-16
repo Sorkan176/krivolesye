@@ -1,0 +1,124 @@
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 470px;
+    min-height: 390px;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 75px 85px 30px;
+    position: relative;
+}
+
+.profile-form__background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.profile-form__title {
+    margin: 0;
+    padding: 15px 0 0 10px;
+}
+
+.profile-form__field {
+    position: relative;
+    width: 100%;
+    color: var(--color-white);
+}
+
+.profile-form__input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    color:var(--color-black-green);
+    background: white;
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.profile-form__input::placeholder {
+    color: var(--color-green);
+}
+
+.profile-form__input:hover {
+    border-color: var(--color-light-green);
+}
+
+.profile-form__input:focus {
+    background: #fff;
+    border-color: var(--color-light-green);
+}
+
+.profile-form__input:disabled {
+    background: #ffffff;
+    color: var(--background-color);
+    cursor: not-allowed;
+}
+
+.profile-form__input:-webkit-autofill,
+.profile-form__input:-webkit-autofill:hover,
+.profile-form__input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+    -webkit-text-fill-color: #000000;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.profile-form__actions {
+    display: flex;
+    align-self: flex-end;
+    gap: 10px;
+}
+
+.profile-form__button {
+    width: fit-content;
+    padding: 8px 12px;
+    color: var(--color-green);
+    background: var(--light-green);
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.profile-form__button:hover {
+    background: var(--color-dark-green);
+    box-shadow: 2px 2px 2px 1px rgba(255, 30, 0, 0.37);
+}
+
+.profile-form__button:active {
+    transform: scale(0.98);
+}
+
+.profile-form__button:disabled {
+    background: var(--background-color);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.profile-form__error {
+    margin: -4px 0 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--color-red);
+    background: var(--background-color);
+    border: 1px solid #f5c6c2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .profile-form {
+        gap: 8px;
+        margin: 0 auto;
+        min-height: 375px;
+        width: 360px;
+        padding: 75px 55px 30px;
+    }
+}

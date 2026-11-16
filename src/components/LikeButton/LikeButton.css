@@ -1,0 +1,16 @@
+.like-add__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: none;
+}
+
+
+.like-add__button:hover {
+    transform: scale(1.2);
+}

@@ -1,0 +1,108 @@
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border-left: 1px solid var(--color-brown);
+    padding-left: 25px;
+    color: var(--black-white-green-color);
+}
+
+.cart-summary__title {
+    margin: 0 0 10px;
+}
+
+.cart-summary__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-summary__item {
+    min-height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--color-brown);
+}
+
+.cart-summary__product {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.cart-summary__name {
+    overflow-wrap: anywhere;
+}
+
+.cart-summary__quantity {
+    color: var(--main-text-color);
+}
+
+.cart-summary__price {
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: var(--black-white-green-color);
+}
+
+.cart-summary__total {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: auto;
+    padding: 24px 0;
+    color: var(--black-white-green-color);
+}
+
+.cart-summary__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.cart-summary__button {
+    border-radius: 6px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    position: relative;
+    border: none;
+    overflow: hidden;
+}
+
+.cart-summary__checkout {
+    background: var(--color-green);
+    color: var(--color-white);
+}
+
+.cart-summary__button::before {
+    content: '';
+    z-index: 5;
+    position: absolute;
+    inset: 0;
+    border: 3px solid var(--black-white-green-color);
+    pointer-events: none;
+    border-radius: 6px;
+
+    clip-path: circle(0 at var(--x) var(--y));
+    transition: clip-path 0.4s ease;
+}
+
+.cart-summary__button:hover::before {
+    clip-path: circle(150% at var(--x) var(--y));
+}
+
+
+.cart-summary__continue {
+    background: var(--color-light-brown);
+    color: var(--color-dark-green);
+}
+
+.cart__empty {
+    padding-block: 60px;
+    color: var(--color-dark-green);
+}

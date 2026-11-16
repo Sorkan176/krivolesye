@@ -1,0 +1,11 @@
+.search-page {
+    width: 100%;
+}
+
+.search-page__text {
+    box-sizing: border-box;
+    padding: 5px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

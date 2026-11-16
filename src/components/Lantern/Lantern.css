@@ -1,0 +1,17 @@
+.parallax-lantern {
+    position: absolute;
+    height: max(17vh, 150px);
+    aspect-ratio: 1/3;
+    background: url("../../assets/long-lantern.svg") no-repeat center center / contain;
+    z-index: 6;
+}
+
+.parallax-lantern_first {
+    top: 8vh;
+    left: 9vw;
+}
+
+.parallax-lantern_second {
+    top: 27vh;
+    right: 8vw;
+}

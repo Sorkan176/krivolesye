@@ -1,0 +1,139 @@
+.enter-form-wrapper {
+    margin: 30px;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background: url("../../assets/enter-form-background.svg") no-repeat center center / contain;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.enter-form {
+    padding-top: 55px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-sizing: border-box;
+    color: var(--color-dark-green);
+}
+
+
+.enter-form__field {
+    color: var(--color-white);
+    position: relative;
+    width: 100%;
+}
+
+.enter-form__input {
+    width: 100%;
+    padding: 10px 12px;
+    color: var(--color-dark-green);
+    background: white;
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.enter-form__input::placeholder {
+    color: var(--color-green);
+}
+
+.enter-form__input:hover {
+    border-color: var(--color-green);
+}
+
+.enter-form__input:focus {
+    background: #fff;
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 2px var(--color-dark-green);;
+}
+
+.enter-form__input:disabled {
+    background: #ffffff;
+    color: var(--background-color);
+    cursor: not-allowed;
+}
+
+.enter-form__input:-webkit-autofill,
+.enter-form__input:-webkit-autofill:hover,
+.enter-form__input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+    -webkit-text-fill-color: #000000;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.enter-form__button {
+    width: fit-content;
+    padding: 8px 12px;
+    color: #fff;
+    background: var(--color-dark-green);
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.enter-form__button:hover {
+    background: var(--color-green);
+}
+
+.enter-form__button:active {
+    transform: scale(0.98);
+}
+
+.enter-form__button:disabled {
+    background: var(--background-color);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.enter-form__error {
+    margin: -4px 0 0;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--color-red);
+    background: var(--background-color);
+    border: 1px solid #f5c6c2;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.enter-form__footer {
+}
+
+.enter-form__link {
+    color:var(--color-dark-green);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.enter-form__link.active {
+    color: var(--color-green);
+}
+
+.enter-form__link:hover {
+    color: var(--color-green);
+    text-decoration: underline;
+}
+
+.enter-form__link:focus-visible {
+    outline: 2px solid var(--color-green);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+    .enter-form-wrapper {
+        width: 95%;
+        background: none;
+    }
+
+    .enter-form {
+        border: 65px solid transparent;
+        border-image: url("../../assets/enter-form-background.svg") 65 fill;
+        padding: 0;
+        width: 100%;
+    }
+}

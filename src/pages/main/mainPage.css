@@ -1,0 +1,28 @@
+.greeting-container {
+    width: 100%;
+    min-height: 1330px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../../assets/mainPageBackground.svg") no-repeat center top / contain;
+}
+
+/* от 0 до 1279 */
+@media (max-width: 1279px) {
+    .greeting-container {
+        min-height: 0;
+        aspect-ratio: 10 / 13;
+        background: url("../../assets/mainPageBackground1024.svg") no-repeat center top / contain;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .greeting-container {
+        min-height: 0;
+        aspect-ratio: 1 / 2;
+        background: url("../../assets/mainPageBackground767.svg") no-repeat center top / contain;
+    }
+}

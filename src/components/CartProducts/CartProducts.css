@@ -1,0 +1,67 @@
+.cart-products {
+    min-width: 0;
+}
+
+.cart-products__canvas {
+    --card-width: 200px;
+    --card-height: 280px;
+    --column-gap: 20px;
+    --row-step: 160px;
+    --columns: calc(100% / var(--card-width));
+
+    position: relative;
+    display: grid;
+    /* ------ TODO --------------------------------------- */
+    grid-template-columns: repeat(var(--columns), var(--card-width));
+    grid-auto-rows: var(--row-step);
+    column-gap: calc((100% - var(--columns)*var(--card-width))/var(--columns));
+
+    width: 100%;
+    box-sizing: border-box;
+
+    /* Компенсируем выступ последней карточки */
+    padding-bottom: calc(
+            var(--card-height) - var(--row-step)
+    );
+}
+
+.cart-products__trees {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    /* ------ TODO --------------------------------------- */
+    grid-template-columns: repeat(var(--columns), var(--card-width));
+    column-gap: calc((100% - var(--columns)*var(--card-width))/var(--columns));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cart-products__tree {
+    justify-self: center;
+    width: 10px;
+    height: 100%;
+    border-radius: 2px;
+    border: none;
+
+    background:
+            repeating-linear-gradient(
+                    180deg,
+                    transparent 0 70px,
+                    rgb(50 27 12 / 20%) 70px 72px
+            ),
+            linear-gradient(180deg,  var(--color-brown), var(--color-brown-transparent));
+
+    box-shadow: 1px 0 3px rgb(0 0 0 / 18%);
+}
+
+.cart-products__card {
+    position: relative;
+    z-index: 1;
+    min-width: 180px;
+    max-width: 200px;
+    aspect-ratio: 7 / 10;
+}
+
+.cart-products__card:nth-child(1 of .cart-products__card) {
+    margin-top: 25px;
+}

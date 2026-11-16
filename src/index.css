@@ -1,0 +1,177 @@
+:root {
+    --background-color: #ece7d6;
+
+    --color-white-black: #fff;
+    --color-light-grey: #f6f4ef;
+    --color-dark-grey: #b3afa3;
+    --color-light-green: #cfe8b2;
+    --color-green: #5c986a;
+    --color-dark-green: #195756;
+    --color-black-green: #043843;
+    --color-light-brown: #e1c88f;
+    --color-brown: #8c633a;
+    --color-brown-transparent: rgba(171, 136, 96, 0.6);
+    --color-dark-brown: #815638;
+    --color-red: #BD0E1B;
+
+    --main-text-color: #70a681;
+    --color-white: white;
+    --dark-light-green-color: #246665;
+    --black-white-green-color: #246665;
+    --search-color: #043843;
+    --light-green: #cfe8b2;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-white-black: #1b292b;
+    --background-color: #2b4447;
+
+    --color-light-green: #95c5b7;
+    --color-green: #42857b;
+    --dark-light-green-color: #70a681;
+    --black-white-green-color: #cce6ad;
+
+    --color-light-brown: #d3be98;
+    --color-brown: #c3af89;
+    --color-brown-transparent: rgba(171, 119, 96, 0.6);
+
+}
+
+
+body {
+    margin: 0;
+    background: var(--background-color);
+    font-size: 16px;
+    font-family: "Pangolin", cursive;
+    ::selection {
+        background-color: #cc452d;
+        color: #ffffff;
+    }
+    :any-link {
+        text-decoration-line: none;
+        cursor: pointer;
+    }
+}
+
+/* Typography classes */
+
+.text {
+    font-family: "Pangolin", cursive;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+.text_type_main-small {
+     font-size: 15px;
+     line-height: 1.43;
+     font-weight: normal;
+ }
+
+.text_type_main-default {
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.text_type_main-default_bold {
+    font-size: 18px;
+    line-height: 1.1;
+    font-weight: bold;
+    letter-spacing: 0.11em;
+}
+
+.text_type_main-medium {
+     font-weight: bold;
+     font-size: 26px;
+     line-height: 1.25;
+     letter-spacing: 0.08em;
+ }
+
+.text_type_main-large {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0.07em;
+}
+
+.text_type_main-extra-large {
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0.07em;
+}
+
+/*.text_color_inactive {*/
+/*    color: var(--text-inactive-color);*/
+/*}*/
+
+.text_type_digits-default {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: .75;
+}
+
+.text_type_digits-medium {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.0;
+}
+
+.text_type_digits-small {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: .70;
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+}
+
+.text_color_primary {
+    color: var(--main-text-color)
+}
+
+/*.text_color_inactive {*/
+/*    color: var(--text-inactive-color)*/
+/*}*/
+
+/*.text_color_accent {*/
+/*    color: var(--colors-interface-accent)*/
+/*}*/
+
+/*.text_color_error {*/
+/*    color: var(--colors-interface-error)*/
+/*}*/
+
+/*.text_color_success {*/
+/*    color: var(--colors-interface-success)*/
+/*}*/
+
+@media (max-width: 767px) {
+    .text_type_main-extra-large {
+        font-size: 65px;
+    }
+    .text_type_main-medium {
+        font-size: 20px;
+    }
+    .text_type_main-default {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 530px) {
+    .text_type_main-extra-large {
+        font-size: 55px;
+    }
+    .text_type_main-medium {
+        font-size: 16px;
+    }
+    .text_type_main-default {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,73 @@
+.good-card {
+    --polygon-width: 24px;
+    --polygon-width-1: 23px;
+    color: var(--color-black-green);
+    min-width: 180px;
+    max-width: 200px;
+    aspect-ratio: 7 / 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 20px 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    background: var(--color-dark-green);
+
+
+    clip-path: polygon(
+            var(--polygon-width) 0,                  /* верх-лево: конец среза */
+            calc(100% - var(--polygon-width)) 0,     /* верх-право: начало среза */
+            100% var(--polygon-width),               /* верх-право: конец среза */
+            100% calc(100% - var(--polygon-width)),  /* низ-право: начало среза */
+            calc(100% - var(--polygon-width)) 100%,  /* низ-право: конец среза */
+            var(--polygon-width) 100%,               /* низ-лево: начало среза */
+            0 calc(100% - var(--polygon-width)),     /* низ-лево: конец среза */
+            0 var(--polygon-width)                   /* верх-лево: начало среза */
+    );
+}
+
+.good-card::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--color-light-green); /* цвет фона карточки */
+    clip-path: polygon(
+            var(--polygon-width-1) 0, calc(100% - var(--polygon-width-1)) 0,
+            100% var(--polygon-width-1), 100% calc(100% - var(--polygon-width-1)),
+            calc(100% - var(--polygon-width-1)) 100%, var(--polygon-width-1) 100%,
+            0 calc(100% - var(--polygon-width-1)), 0 var(--polygon-width-1)
+    );
+    z-index: -1;
+}
+
+
+.good-card__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.good-card__text {
+    margin-top: 4px;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;        /* максимум 3 строки */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.good-card__title, .good-card__price {
+    margin: 0;
+}
+
+/* === Кнопки === */
+.good-card__actions {
+    padding: 0 7px 0;
+    border-top: 1px solid var(--color-light-green);    /* тонкий разделитель */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,232 @@
+.options-container {
+    width: 100%;
+    position: relative;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-top: 10px solid;
+    border-left: 10px solid;
+    border-image: linear-gradient(45deg, var(--color-brown), var(--color-brown-transparent)) 1;
+}
+
+.option-lantern {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 10;
+    content: url("../../assets/paper-lantern.svg");
+    width: 100px;
+    animation: swing 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    transform-origin: top center;
+}
+
+@keyframes swing {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-5deg); }
+    50%  { transform: rotate(5deg); }
+    75%  { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.option__icon {
+    color: var(--color-brown);
+}
+
+.sort__icon {
+    height: 100%;
+    width: 25px;
+}
+
+.filter__icon {
+    height: 35px;
+    width: 22px;
+}
+
+.options__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-brown);
+    text-transform: uppercase;
+    cursor: inherit;
+}
+
+/* Sort */
+.sort {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px solid var(--color-brown);
+    padding-top: 20px;
+}
+
+.sort__select {
+    width: 270px;
+    padding: 10px 40px 10px 10px;
+    color: var(--search-color);
+    background-color: #fff;
+    border: 1px solid var(--background-color);
+    border-radius: 8px;
+    /* Убираем системную стрелку */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.sort__select:focus {
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 3px rgb(68, 119, 77, 0.2);
+}
+
+.sort__select:hover {
+    border-color: var(--background-color);
+}
+
+/** Filter **/
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter__fieldset {
+    border: none;
+    padding: 0;
+}
+
+.filter__type {
+    text-transform: uppercase;
+    color: var(--color-brown);
+    margin-bottom: 10px;
+}
+
+.filter__rows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Скрываем нативный чекбокс */
+.filter-checkbox {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-checkbox__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* ===== Плашка ===== */
+.filter-checkbox__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 70px;
+    min-width: 70px;
+    padding: 10px;
+
+    background: var(--color-light-brown);
+    color: var(--color-dark-green);
+    border-radius: 6px;
+    box-shadow: 0 4px 1px rgba(189, 14, 27, 0.4);
+
+    transition: background 0.2s, color 0.2s, transform 0.12s;
+}
+
+/* Декоративные уголки — как «заклёпки» на деревянной табличке */
+.filter-checkbox__card::before,
+.filter-checkbox__card::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(74, 68, 56, 0.35);
+}
+
+.filter-checkbox__card::before {
+    top: 6px;
+    left: 6px;
+}
+
+.filter-checkbox__card::after {
+    top: 6px;
+    right: 6px;
+}
+
+/* Иконка */
+.filter-checkbox__icon {
+    width: 20px;
+    height: 20px;
+    color: currentColor;
+    transition: transform 0.15s;
+}
+
+/* Подпись */
+.filter-checkbox__label {
+    text-align: center;
+}
+
+/* ===== Hover ===== */
+.filter-checkbox:hover .filter-checkbox__card {
+    background: var(--color-green);
+    color: var(--color-black-green);
+}
+
+.filter-checkbox:hover .filter-checkbox__icon {
+    transform: scale(1.25);
+}
+
+/* ===== Фокус с клавиатуры ===== */
+.filter-checkbox__input:focus-visible + .filter-checkbox__card {
+    outline: 2px solid var(--color-light-green);
+    outline-offset: 2px;
+}
+
+/* ===== Активное состояние ===== */
+.filter-checkbox__input:checked + .filter-checkbox__card {
+    background: var(--color-light-green);
+
+}
+
+/* Уголки-заклёпки в активном состоянии — светлее */
+.filter-checkbox__input:checked + .filter-checkbox__card::before,
+.filter-checkbox__input:checked + .filter-checkbox__card::after {
+    background: rgba(245, 241, 230, 0.5);
+}
+
+.container_hidden {
+    display: none;
+}
+
+.options__hide-button {
+    background: none;
+    width: fit-content;
+}

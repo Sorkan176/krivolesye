@@ -1,0 +1,12 @@
+import {useContext} from "react";
+import ShopContext from "./ShopContext.js";
+
+export default function useShop() {
+  const context = useContext(ShopContext);
+
+  if (!context) {
+    throw new Error('useShop must be used within ShopProvider');
+  }
+
+  return context;
+}

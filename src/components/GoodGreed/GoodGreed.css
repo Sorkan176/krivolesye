@@ -1,0 +1,36 @@
+.goods-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-right: 10px solid;
+    border-left: 10px solid;
+    border-image: linear-gradient(to bottom, var(--color-brown), var(--color-brown-transparent)) 1;
+    row-gap: 18px;
+    box-sizing: border-box;
+}
+
+.good-card-wrapper {
+    min-height: 0;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 235px;
+    flex: 1;
+}
+
+.grid-stick {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+}
+
+.grid-stick_default_style {
+    background:  linear-gradient(90deg,  var(--color-brown), var(--color-brown-transparent));
+    border-left: 3px solid var(--color-dark-brown);
+}
