@@ -26,9 +26,11 @@
     background-color: inherit;
 }
 
-.cart-add-good__button:hover {
-    background: var(--color-dark-green);
-    box-shadow: 2px 2px 2px 1px rgba(255, 30, 0, 0.37);
+@media (hover: hover) and (pointer: fine) {
+    .cart-add-good__button:hover {
+        background: var(--color-dark-green);
+        box-shadow: 2px 2px 2px 1px rgba(255, 30, 0, 0.37);
+    }
 }
 
 @keyframes pop-in {

@@ -101,12 +101,12 @@
 }
 
 .sitemap-dropdown__link {
+    display: block;
+    width: 100%;
     color: var(--dark-light-green-color);
 }
 
-.sitemap-dropdown__item:hover {
-    background: rgba(152, 152, 152, 0.13);
-}
+
 
 
 .sitemap__section {
@@ -139,16 +139,22 @@
     content: url("../../assets/profile-image.svg");
 }
 
-.sitemap__section:hover {
-    cursor: pointer;
-    border: 2px solid var(--color-green);
-    transform: scale(1.10);
-    transition: border 0.3s, transform 0.3s;
-}
+@media (hover: hover) and (pointer: fine) {
+    .sitemap-dropdown__item:hover {
+        background: rgba(152, 152, 152, 0.13);
+    }
 
-.sitemap__section:hover .sitemap__title {
-    color: var(--color-green);
-    transition: color 0.3s;
+    .sitemap__section:hover {
+        cursor: pointer;
+        border: 2px solid var(--color-green);
+        transform: scale(1.10);
+        transition: border 0.3s, transform 0.3s;
+    }
+
+    .sitemap__section:hover .sitemap__title {
+        color: var(--color-green);
+        transition: color 0.3s;
+    }
 }
 
 .sitemap__profile {

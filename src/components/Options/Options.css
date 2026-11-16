@@ -4,7 +4,7 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     box-sizing: border-box;
     border-top: 10px solid;
     border-left: 10px solid;
@@ -60,11 +60,11 @@
     flex-direction: column;
     gap: 10px;
     border-top: 1px solid var(--color-brown);
-    padding-top: 20px;
+    padding-top: 18px;
 }
 
 .sort__select {
-    width: 270px;
+    width: 250px;
     padding: 10px 40px 10px 10px;
     color: var(--search-color);
     background-color: #fff;
@@ -87,10 +87,6 @@
 .sort__select:focus {
     border-color: var(--color-green);
     box-shadow: 0 0 0 3px rgb(68, 119, 77, 0.2);
-}
-
-.sort__select:hover {
-    border-color: var(--background-color);
 }
 
 /** Filter **/
@@ -194,14 +190,20 @@
     text-align: center;
 }
 
-/* ===== Hover ===== */
-.filter-checkbox:hover .filter-checkbox__card {
-    background: var(--color-green);
-    color: var(--color-black-green);
-}
+/* Hover */
+@media (hover: hover) and (pointer: fine) {
+    .sort__select:hover {
+        border-color: var(--background-color);
+    }
 
-.filter-checkbox:hover .filter-checkbox__icon {
-    transform: scale(1.25);
+    .filter-checkbox:hover .filter-checkbox__card {
+        background: var(--color-green);
+        color: var(--color-black-green);
+    }
+
+    .filter-checkbox:hover .filter-checkbox__icon {
+        transform: scale(1.25);
+    }
 }
 
 /* ===== Фокус с клавиатуры ===== */
@@ -229,4 +231,24 @@
 .options__hide-button {
     background: none;
     width: fit-content;
+}
+
+
+@media (max-width: 544px) {
+    .options-container {
+        padding: 16px;
+        gap: 5px;
+    }
+    .filter-checkbox__card {
+        gap: 5px;
+        min-height: 60px;
+        min-width: 60px;
+        padding: 8px;
+    }
+    .sort {
+        padding-top: 10px;
+    }
+    .option-lantern {
+        width: 60px;
+    }
 }

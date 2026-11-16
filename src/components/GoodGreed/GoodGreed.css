@@ -12,7 +12,6 @@
 
 .good-card-wrapper {
     min-height: 0;
-    height: 300px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,4 +32,14 @@
 .grid-stick_default_style {
     background:  linear-gradient(90deg,  var(--color-brown), var(--color-brown-transparent));
     border-left: 3px solid var(--color-dark-brown);
+}
+
+@media (max-width: 544px) {
+    .goods-grid {
+        row-gap: 10px;
+    }
+
+    .good-card-wrapper {
+        min-width: 46%;
+    }
 }

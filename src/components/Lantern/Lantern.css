@@ -15,3 +15,9 @@
     top: 27vh;
     right: 8vw;
 }
+
+@media (max-width: 544px) {
+    .parallax-lantern {
+        height: 90px;
+    }
+}

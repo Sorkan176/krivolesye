@@ -1,6 +1,6 @@
 .good-card {
-    --polygon-width: 24px;
-    --polygon-width-1: 23px;
+    --polygon-width: 23px;
+    --polygon-width-1: 22px;
     color: var(--color-black-green);
     min-width: 180px;
     max-width: 200px;
@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 22px 20px 16px;
+    padding: 1px 1px 10px;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -46,17 +46,20 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
-    border-radius: 6px;
     cursor: pointer;
 }
 
 .good-card__text {
-    margin-top: 4px;
     max-width: 100%;
     display: -webkit-box;
     -webkit-line-clamp: 4;        /* максимум 3 строки */
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.good-card__text, .good-card__actions {
+    margin-top: 0;
+    padding: 0 20px 0;
 }
 
 .good-card__title, .good-card__price {
@@ -65,9 +68,24 @@
 
 /* === Кнопки === */
 .good-card__actions {
-    padding: 0 7px 0;
     border-top: 1px solid var(--color-light-green);    /* тонкий разделитель */
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+@media (max-width: 544px) {
+    .good-card {
+        --polygon-width: 16px;
+        --polygon-width-1: 15px;
+        min-width: 150px;
+        width: 90%;
+        aspect-ratio: 17 / 25;
+    }
+    .good-card__text, .good-card__actions {
+        margin-top: 0;
+        padding: 0 15px 0;
+    }
+
 }

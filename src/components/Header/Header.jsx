@@ -110,8 +110,13 @@ function Header() {
               <ul className={`sitemap__dropdown ${isMenuOpen ? 'sitemap__dropdown_open' : ''}`}>
 
                 <li className="sitemap-dropdown__item">
-                  <Link to={'/profile'} className='sitemap-dropdown__link'>
-                    o
+                  <Link
+                    to={'/profile'}
+                    className='sitemap-dropdown__link'
+                    onClick={() => {
+                      closeMenu();
+                    }}>
+                    Профиль
                   </Link>
                 </li>
 

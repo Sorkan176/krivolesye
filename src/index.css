@@ -156,22 +156,40 @@ body {
     .text_type_main-extra-large {
         font-size: 65px;
     }
+    .text_type_main-large {
+        font-size: 32px;
+    }
     .text_type_main-medium {
-        font-size: 20px;
+        font-size: 24px;
     }
     .text_type_main-default {
+        font-size: 16px;
+    }
+    .text_type_main-default_bold {
         font-size: 16px;
     }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 544px) {
     .text_type_main-extra-large {
-        font-size: 55px;
+        font-size: 45px;
     }
+
+    .text_type_main-large {
+        font-size: 30px;
+    }
+
     .text_type_main-medium {
-        font-size: 16px;
+        font-size: 18px;
     }
     .text_type_main-default {
         font-size: 15px;
+    }
+    .text_type_main-default_bold {
+        font-size: 15px;
+    }
+
+    .text_type_digits-medium {
+        font-size: 20px;
     }
 }

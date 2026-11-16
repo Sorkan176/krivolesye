@@ -10,7 +10,8 @@
     background: none;
 }
 
-
-.like-add__button:hover {
-    transform: scale(1.2);
+@media (hover: hover) and (pointer: fine) {
+    .like-add__button:hover {
+        transform: scale(1.2);
+    }
 }

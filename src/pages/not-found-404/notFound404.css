@@ -6,12 +6,13 @@
 
     position: relative;
     height: 340px;
-    min-width: 450px;
-    max-width: 600px;
+    min-width: 300px;
+    max-width: 540px;
     box-sizing: border-box;
-    padding: 50px 20px 0;
+    padding: 50px 50px 0;
 
     background: url("../../assets/error-background.svg") no-repeat center center / contain;
+    color: var(--color-black-green);
 }
 
 .error__return-arrow {

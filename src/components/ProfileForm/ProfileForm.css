@@ -7,7 +7,7 @@
     min-height: 390px;
     max-width: 500px;
     box-sizing: border-box;
-    padding: 75px 85px 30px;
+    padding: 70px 85px 30px;
     position: relative;
 }
 
@@ -117,8 +117,22 @@
     .profile-form {
         gap: 8px;
         margin: 0 auto;
-        min-height: 375px;
-        width: 360px;
-        padding: 75px 55px 30px;
+        min-height: 360px;
+        min-width: 335px;
+        width: 80%;
+        max-width: 390px;
+        padding: 60px 42px 30px;
+    }
+}
+
+@media (max-width: 544px) {
+    .profile-form {
+        gap: 7px;
+        margin: 0 auto;
+        min-height: 345px;
+        min-width: 335px;
+        width: 90%;
+        max-width: 380px;
+        padding: 50px 39px 30px;
     }
 }
