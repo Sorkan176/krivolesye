@@ -85,5 +85,14 @@
 @media (max-width: 767px) {
     .barrel-carousel {
         --card-width: 80vw;
+        touch-action: none;
+        overscroll-behavior: contain;
+    }
+}
+
+@media (max-width: 544px) {
+    .barrel-carousel {
+        --card-width: 85vw;
+        width: calc(var(--card-width) + 7vw);
     }
 }

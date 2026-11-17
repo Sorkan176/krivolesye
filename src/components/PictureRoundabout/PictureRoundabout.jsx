@@ -30,23 +30,61 @@ function PictureRoundabout({ images }) {
     const container = containerRef.current;
     if (!container || count < 2) return;
 
+    let touchStartY = 0;
+    let touchStartX = 0;
+
     const handleWheel = (event) => {
-      // Не перехватываем горизонтальный скролл.
       if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
 
       event.preventDefault();
 
-      // deltaY управляет вращением.
       angleRef.current += event.deltaY * 0.05;
       setAngle(angleRef.current);
+    };
+
+    const handleTouchStart = (event) => {
+      const touch = event.touches[0];
+
+      touchStartY = touch.clientY;
+      touchStartX = touch.clientX;
+    };
+
+    const handleTouchMove = (event) => {
+      if (event.touches.length !== 1) return;
+
+      const touch = event.touches[0];
+
+      const deltaY = touchStartY - touch.clientY;
+      const deltaX = touchStartX - touch.clientX;
+
+      // Игнорируем преимущественно горизонтальные жесты.
+      if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+
+      event.preventDefault();
+
+      angleRef.current += deltaY * 0.5;
+      setAngle(angleRef.current);
+
+      touchStartY = touch.clientY;
+      touchStartX = touch.clientX;
     };
 
     container.addEventListener("wheel", handleWheel, {
       passive: false,
     });
 
+    container.addEventListener("touchstart", handleTouchStart, {
+      passive: true,
+    });
+
+    container.addEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
+
     return () => {
       container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
     };
   }, [count]);
 
