@@ -11,7 +11,6 @@
 
     position: relative;
     display: grid;
-    /* ------ TODO --------------------------------------- */
     grid-template-columns: repeat(var(--columns), var(--card-width));
     grid-auto-rows: var(--row-step);
     column-gap: calc((100% - var(--columns)*var(--card-width))/var(--columns));
@@ -29,7 +28,6 @@
     position: absolute;
     inset: 0;
     display: grid;
-    /* ------ TODO --------------------------------------- */
     grid-template-columns: repeat(var(--columns), var(--card-width));
     column-gap: calc((100% - var(--columns)*var(--card-width))/var(--columns));
     pointer-events: none;

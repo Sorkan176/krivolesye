@@ -1,5 +1,6 @@
 import './Footer.css'
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
+import {Link} from "react-router-dom";
 
 function Footer() {
   return (<footer className="footer footer_background_image">
@@ -10,13 +11,13 @@ function Footer() {
           <ThemeToggle/>
         </li>
         <li className="footer-nav__item">
-          <a className="footer-nav__link" href="/about">About</a>
+          <Link className="footer-nav__link" target="_blank" to={"/about"}>About</Link>
         </li>
         <li className="footer-nav__item">
-          <a className="footer-nav__link" target="_blank" href="/privacy">Privacy</a>
+          <Link className="footer-nav__link" target="_blank" to={"/privacy"}>Privacy</Link>
         </li>
         <li className="footer-nav__item">
-          <a className="footer-nav__link" href="/contact">Contact</a>
+          <Link className="footer-nav__link" target="_blank" to={"/contact"}>Contact</Link>
         </li>
         <li className="footer-nav__item footer__item_copyright">
           Copyright © Sorkan176, <span lang="ja">あん</span>

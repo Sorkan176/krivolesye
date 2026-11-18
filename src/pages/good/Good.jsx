@@ -25,7 +25,7 @@ function Good() {
     <PictureRoundabout images={good.images}/>
     <div className='good-description-container'>
       <section className='good__description'>
-        <h2 className='good__title text text_type_main-medium'>{good.title}</h2>
+        <h2 className='good__title text text_type_main-large-medium'>{good.title}</h2>
         <p className='good__price text text_type_digits-medium'>{good.price}₽</p>
         <div className='good__actions'>
           <LikeButton goodId={good.id} />

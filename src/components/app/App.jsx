@@ -15,6 +15,9 @@ import Profile from "../../pages/profile/Profile.jsx";
 import Register from "../../pages/register/Register.jsx";
 import ProfileOrders from "../../pages/profileOrders/ProfileOrders.jsx";
 import Search from "../../pages/search/Search.jsx";
+import About from "../../pages/about/About.jsx";
+import Privacy from "../../pages/privacy/Privacy.jsx";
+import Contact from "../../pages/Contact/Contact.jsx";
 
 
 function App() {
@@ -53,6 +56,9 @@ function App() {
           path='profile/orders'
           element={<ProtectedRoute element={<ProfileOrders />} />}
         />
+        <Route path='/about' element={<About/>} />
+        <Route path='/privacy' element={<Privacy/>} />
+        <Route path='/contact' element={<Contact/>} />
         <Route path='*' element={<NotFound404 />} />
       </Route>
     </Routes>
