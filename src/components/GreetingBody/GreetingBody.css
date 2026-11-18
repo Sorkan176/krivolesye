@@ -64,67 +64,6 @@
     );
 }
 
-/* Лёгкое движение поверхности даже без клика */
-.water-scene__surface::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    pointer-events: none;
-
-    background: repeating-linear-gradient(
-            177deg,
-            transparent 0px,
-            transparent 9px,
-            rgb(210 235 240 / 9%) 10px,
-            transparent 12px,
-            transparent 20px
-    );
-
-    background-size: 100% 80px;
-}
-
-.water-scene_visible .water-scene__surface::before {
-    animation: water-wind 7s ease-in-out infinite;
-}
-
-/* Контейнер для кругов ряби */
-.water-scene__ripples {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-/* Волны от клика */
-.water-scene__ripple {
-    position: absolute;
-
-    width: 12px;
-    height: 3px;
-    border: 1px solid rgb(220 245 250 / 75%);
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%) scale(0);
-    animation: water-ripple 1.8s ease-out forwards;
-}
-
-.water-scene__ripple::before,
-.water-scene__ripple::after {
-    content: "";
-    position: absolute;
-    inset: -5px;
-
-    border: 1px solid rgb(220 245 250 / 45%);
-    border-radius: 50%;
-}
-
-.water-scene__ripple::after {
-    inset: -12px;
-    border-color: rgb(220 245 250 / 25%);
-}
-
 .water-scene__filters {
     position: absolute;
     width: 0;
@@ -132,36 +71,6 @@
     overflow: hidden;
     pointer-events: none;
 }
-
-@keyframes water-wind {
-    0% {
-        transform: translateY(-15px);
-        opacity: 0.25;
-    }
-
-    50% {
-        transform: translateY(15px);
-        opacity: 0.65;
-    }
-
-    100% {
-        transform: translateY(-15px);
-        opacity: 0.25;
-    }
-}
-
-@keyframes water-ripple {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(5);
-        opacity: 0;
-    }
-}
-
 
 @media (prefers-reduced-motion: reduce) or (max-width: 767px) {
     .water-scene__surface::before {
@@ -171,11 +80,6 @@
 
     .water-scene__reflection {
         filter: none !important;
-    }
-
-    .water-scene__ripple {
-        animation: none;
-        transition: none;
     }
 }
 

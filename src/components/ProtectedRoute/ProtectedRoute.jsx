@@ -1,5 +1,6 @@
 import {Navigate, useLocation} from "react-router-dom";
 import useAuth from "../../context/useAuth.js";
+import Loading from "../Loading/Loading.jsx";
 
 
 function ProtectedRoute({
@@ -11,7 +12,7 @@ function ProtectedRoute({
   const { isAuthenticated, loadingAuth } = useAuth();
 
   if (loadingAuth) {
-    return null; // Позже можно заменить на Loader
+    return <Loading />
   }
 
   if (onlyUnAuth && isAuthenticated) {
