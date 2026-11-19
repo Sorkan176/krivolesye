@@ -1,6 +1,5 @@
 .cart {
     width: 100%;
-    max-width: 1600px;
     box-sizing: border-box;
     padding: 0 22px;
 }
@@ -17,12 +16,8 @@
     align-items: stretch;
 }
 
-/* Адаптивность */
 
-@media (max-width: 870px) {
-    .cart {
-        padding: 10px 26px;
-    }
+@media (max-width: 767px) {
     .cart__layout {
         grid-template-columns: minmax(0, 1fr);
         gap: 40px;
@@ -31,10 +26,6 @@
 }
 
 @media (max-width: 544px) {
-    .cart {
-        padding: 4px 16px;
-    }
-
     .cart-products__canvas {
         --card-width: 180px;
         --card-height: 220px;
@@ -45,6 +36,4 @@
     .cart-products__tree {
         width: 4px;
     }
-
-
 }

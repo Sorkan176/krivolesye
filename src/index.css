@@ -15,6 +15,7 @@
     --color-red: #BD0E1B;
 
     --main-text-color: #70a681;
+    --header-text-color: #8c633a;
     --color-white: white;
     --dark-light-green-color: #246665;
     --black-white-green-color: #246665;
@@ -143,6 +144,9 @@ body {
     color: var(--main-text-color)
 }
 
+.text_color_secondary {
+    color: var(--header-text-color)
+}
 .text_error {
     color: var(--color-red);
     position: absolute;

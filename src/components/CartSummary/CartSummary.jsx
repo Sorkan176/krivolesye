@@ -39,7 +39,7 @@ function CartSummary({
 
   return (
     <aside className="cart-summary">
-      <h3 className="cart-summary__title text text_type_main-medium">Ваш заказ</h3>
+      <h2 className="cart-summary__title text text_type_main-medium">Ваш заказ</h2>
 
       <div className="cart-summary__items">
         {cartGoods.map((item) => (

@@ -72,8 +72,8 @@ function Cart() {
   }
 
   return (
-    <main className="cart">
-      <h2 className="cart__title text text_type_main-large">Корзина</h2>
+    <div className="cart">
+      <h1 className="cart__title text text_type_main-large">Корзина</h1>
 
       {cart.length === 0 ? (
         <p className="cart__empty text text_type_main-medium">Корзина пуста</p>
@@ -91,7 +91,7 @@ function Cart() {
           />
         </div>
       )}
-    </main>
+    </div>
   );
 }
 

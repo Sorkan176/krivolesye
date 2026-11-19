@@ -1,0 +1,12 @@
+.favorites {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 22px;
+    box-sizing: border-box;
+}
+
+.favorites__title {
+    margin: 0 0 15px;
+}

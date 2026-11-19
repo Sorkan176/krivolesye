@@ -30,13 +30,6 @@ export async function removeFavorite(goodId) {
 }
 
 export async function syncFavorites(favorites) {
-  const { error: deleteError } = await supabase
-    .from('favorites')
-    .delete()
-    .neq('good_id', -1);
-
-  if (deleteError) throw deleteError;
-
   if (favorites.length === 0) return;
 
   const items = favorites.map((goodId) => ({
@@ -47,6 +40,7 @@ export async function syncFavorites(favorites) {
     .from('favorites')
     .upsert(items, {
       onConflict: 'user_id,good_id',
+      ignoreDuplicates: true,
     });
 
   if (error) throw error;
