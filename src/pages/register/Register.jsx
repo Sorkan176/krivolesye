@@ -2,7 +2,7 @@ import './Register.css'
 import {useState} from "react";
 import { useNavigate} from "react-router-dom";
 import {signUp} from "../../api/auth.js";
-import EnterForm from "../../components/Login/EnterForm.jsx";
+import EnterForm from "../../components/EnterForm/EnterForm.jsx";
 
 
 function Register() {

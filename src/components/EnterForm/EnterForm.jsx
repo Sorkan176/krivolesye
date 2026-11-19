@@ -153,7 +153,7 @@ function EnterForm({
 
         {errorText && (
           <p className='text text_type_main-default enter-form__error text_error' role='alert'>
-            {errorText}
+            {errorText}, try with vpn
           </p>
         )}
 

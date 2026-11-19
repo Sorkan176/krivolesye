@@ -1,7 +1,7 @@
 import './Login.css'
 import {useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
-import EnterForm from "../../components/Login/EnterForm.jsx";
+import EnterForm from "../../components/EnterForm/EnterForm.jsx";
 import {signIn} from "../../api/auth.js"
 
 function Login() {
