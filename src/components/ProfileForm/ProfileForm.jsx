@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import useAuth from "../../context/useAuth.js";
 import {updateProfileName} from "../../api/profile.js";
 import {updateCredentials} from "../../api/auth.js";
+import validateField from "../../features/validateField.js";
 
 function ProfileForm() {
   const [saving, setSaving] = useState(false);
@@ -12,6 +13,9 @@ function ProfileForm() {
     password: ''
   });
   const { user, profile, refreshProfile } = useAuth();
+
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
 
   useEffect(() => {
@@ -89,6 +93,13 @@ function ProfileForm() {
       email: user.email,
       password: ''
     });
+
+    setTouched({
+      name: false,
+      email: false,
+      password: false
+    });
+
   };
 
   const handleInputChange = (e) => {
@@ -96,6 +107,17 @@ function ProfileForm() {
       ...prevState,
       [e.target.name]: e.target.value
     }));
+
+    setTouched((prev) => ({
+      ...prev,
+      [e.target.name]: true,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [e.target.name]: validateField(e.target.name, e.target.value),
+    }));
+
   };
 
   return (
@@ -133,10 +155,13 @@ function ProfileForm() {
             name="name"
             placeholder="Имя"
             autoComplete="name"
-            onChange={handleInputChange}
+            onChange={ handleInputChange }
             value={formValue.name}
             required
           />
+          {touched.name && errors.name && (
+            <p className='text text_type_main-small text_error'>{errors.name}</p>
+          )}
         </div>
 
         <div className="profile-form__field">
@@ -148,10 +173,14 @@ function ProfileForm() {
             name="email"
             placeholder="E-mail"
             autoComplete="email"
-            onChange={handleInputChange}
+            onChange={ handleInputChange }
             value={formValue.email}
             required
           />
+
+          {touched.email && errors.email && (
+            <p className='text text_type_main-small text_error'>{errors.email}</p>
+          )}
         </div>
 
         <div className="profile-form__field">
@@ -163,10 +192,14 @@ function ProfileForm() {
             name="password"
             placeholder="Новый пароль"
             autoComplete="new-password"
-            onChange={handleInputChange}
+            onChange={ handleInputChange }
             value={formValue.password}
             minLength={8}
           />
+
+          {touched.password && errors.password && (
+            <p className='text text_type_main-small text_error'>{errors.password}</p>
+          )}
         </div>
 
         {isFormChanged && (
@@ -183,7 +216,7 @@ function ProfileForm() {
             <button
               className="button profile-form__button text text_type_main-default"
               type="submit"
-              disabled={saving}
+              disabled={saving || errors.name || errors.email || errors.password}
             >
               {saving ? 'Сохранение...' : 'Сохранить'}
             </button>

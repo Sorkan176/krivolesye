@@ -48,8 +48,6 @@ export async function updateCredentials({ email, password, name, }) {
     updates.email = email.trim().toLowerCase();
   }
 
-  console.log('Before ', email)
-
   if (password) {
     updates.password = password;
   }
@@ -65,8 +63,6 @@ export async function updateCredentials({ email, password, name, }) {
   }
 
   const { data, error } = await supabase.auth.updateUser(updates);
-
-  console.log('After', data)
 
 
   if (error) throw error;

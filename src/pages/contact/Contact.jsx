@@ -23,7 +23,7 @@ function Contact() {
 
     // TODO нужно подключить отправку сообщения
 
-    console.log(form);
+    // console.log(form);
   };
 
   return (

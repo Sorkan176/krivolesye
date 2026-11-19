@@ -143,17 +143,10 @@ body {
     color: var(--main-text-color)
 }
 
-/*.text_color_inactive {*/
-/*    color: var(--text-inactive-color)*/
-/*}*/
-
-/*.text_color_accent {*/
-/*    color: var(--colors-interface-accent)*/
-/*}*/
-
-/*.text_color_error {*/
-/*    color: var(--colors-interface-error)*/
-/*}*/
+.text_error {
+    color: var(--color-red);
+    position: absolute;
+}
 
 /*.text_color_success {*/
 /*    color: var(--colors-interface-success)*/
@@ -178,6 +171,9 @@ body {
     .text_type_main-default_bold {
         font-size: 16px;
     }
+    .text_type_main-small {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 544px) {
@@ -200,6 +196,9 @@ body {
     }
     .text_type_main-default_bold {
         font-size: 15px;
+    }
+    .text_type_main-small {
+        font-size: 13px;
     }
 
     .text_type_digits-medium {

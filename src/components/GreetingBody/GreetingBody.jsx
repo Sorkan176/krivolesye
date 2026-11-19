@@ -41,8 +41,8 @@ function GreetingBody() {
 
   return (
     <>
-      {/*<Lantern number={'first'} speed={1.25}/>*/}
-      {/*<Lantern number={'second'} speed={0.8}/>*/}
+      <Lantern number={'first'} speed={1.25}/>
+      <Lantern number={'second'} speed={0.8}/>
 
       <Link to='/goods' className='catalog-container'>
         <p className='text text_type_main-medium catalog-container__text'>

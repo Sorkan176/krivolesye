@@ -17,7 +17,7 @@ import ProfileOrders from "../../pages/profileOrders/ProfileOrders.jsx";
 import Search from "../../pages/search/Search.jsx";
 import About from "../../pages/about/About.jsx";
 import Privacy from "../../pages/privacy/Privacy.jsx";
-import Contact from "../../pages/Contact/Contact.jsx";
+import Contact from "../../pages/contact/Contact.jsx";
 
 
 function App() {

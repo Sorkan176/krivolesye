@@ -71,8 +71,6 @@ function OrderHistory() {
     return <p className='text text_type_main-medium'>У вас пока нет заказов</p>;
   }
 
-  console.log(goods, orders)
-
 
   return (
     <section className="order-history">
