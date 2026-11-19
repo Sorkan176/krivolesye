@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {getOrders} from "../../api/orders.js";
 import useShop from "../../context/useShop.js";
 import {Link} from "react-router-dom";
+import Loading from "../Loading/Loading.jsx";
 
 
 const orderBackground = <svg width="800" height="30" viewBox="0 0 800 30" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,7 @@ function OrderHistory() {
   }, []);
 
   if (loading) {
-    return <p className='text text_type_main-medium'>Загрузка заказов...</p>;
+    return <Loading text='Загрузка заказов...'/>;
   }
 
   if (error) {

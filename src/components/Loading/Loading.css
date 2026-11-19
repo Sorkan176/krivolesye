@@ -1,11 +1,10 @@
-
 .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    color: #59645f;
+    color: var(--main-text-color);
 }
 
 .loading-container svg {

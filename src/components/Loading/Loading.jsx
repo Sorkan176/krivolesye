@@ -1,5 +1,5 @@
 import './Loading.css'
-import { useEffect, useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 
 
@@ -7,6 +7,15 @@ export default function Loading({
                                       size = 280,
                                       text = "Загрузка...",
                                     }) {
+  const [loadingText, setLoadingText] = useState(text);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadingText((prev) => prev.concat(' Попробуйте включить vpn'));
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const root = useRef(null);
 
   useEffect(() => {
@@ -161,7 +170,7 @@ export default function Loading({
         </g>
       </svg>
 
-      <span className="text text_type_main-default loading__text">{text}</span>
+      <span className="text text_type_main-medium loading__text">{loadingText}</span>
     </div>
   );
 }
