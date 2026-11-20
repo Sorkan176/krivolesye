@@ -59,13 +59,6 @@ export async function clearCartItems() {
 }
 
 export async function syncCart(cart) {
-  const { error: deleteError } = await supabase
-    .from('cart_items')
-    .delete()
-    .neq('good_id', -1);
-
-  if (deleteError) throw deleteError;
-
   if (cart.length === 0) return;
 
   const items = cart.map((item) => ({
@@ -77,6 +70,7 @@ export async function syncCart(cart) {
     .from('cart_items')
     .upsert(items, {
       onConflict: 'user_id,good_id',
+      ignoreDuplicates: true,
     });
 
   if (error) throw error;
