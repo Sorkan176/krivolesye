@@ -10,8 +10,8 @@ export default function Loading({
   const [loadingText, setLoadingText] = useState(text);
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoadingText((prev) => prev.concat(' Попробуйте включить vpn'));
-    }, 3000);
+      setLoadingText((prev) => prev.concat(' Попробуйте выключить vpn'));
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
