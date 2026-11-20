@@ -20,7 +20,7 @@ https://sorkan176.github.io/krivolesye/
 
 email: user@example.com
 
-пароль: 123456
+пароль: 987654
 
 ## Установка и запуск
 
