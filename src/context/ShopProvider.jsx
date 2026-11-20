@@ -84,12 +84,6 @@ export function ShopProvider({ children }) {
   useEffect(() => {
     if (loadingAuth) return;
 
-    if (!user) {
-      setCart([]);
-      setFavorites([]);
-      return;
-    }
-
     let cancelled = false;
 
     const syncData = async () => {
@@ -110,7 +104,6 @@ export function ShopProvider({ children }) {
             setCart(guestCart);
             setFavorites(guestFavorites);
           }
-
           return;
         }
 
@@ -161,6 +154,16 @@ export function ShopProvider({ children }) {
     return () => {
       cancelled = true;
     };
+  }, [user, loadingAuth]);
+
+  useEffect(() => {
+    if (loadingAuth) return;
+
+    if (!user) {
+      setCart([]);
+      setFavorites([]);
+      return;
+    }
   }, [user, loadingAuth]);
 
 
