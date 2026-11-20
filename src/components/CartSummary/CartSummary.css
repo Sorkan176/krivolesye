@@ -104,8 +104,8 @@
 }
 
 .cart__empty {
-    padding-block: 60px;
-    color: var(--color-dark-green);
+    padding-block: 20px;
+    color: var(--dark-light-green-color);
 }
 
 @media (max-width: 767px) {

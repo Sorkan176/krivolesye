@@ -73,7 +73,7 @@ function Cart() {
 
   return (
     <div className="cart">
-      <h1 className="cart__title text text_type_main-large">Корзина</h1>
+      <h1 className="cart__title text text_type_main-large text_color_secondary">Корзина</h1>
 
       {cart.length === 0 ? (
         <p className="cart__empty text text_type_main-medium">Корзина пуста</p>

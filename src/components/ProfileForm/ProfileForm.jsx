@@ -194,7 +194,7 @@ function ProfileForm() {
             autoComplete="new-password"
             onChange={ handleInputChange }
             value={formValue.password}
-            minLength={8}
+            minLength={6}
           />
 
           {touched.password && errors.password && (

@@ -145,7 +145,7 @@ body {
 }
 
 .text_color_secondary {
-    color: var(--header-text-color)
+    color: var(--color-brown)
 }
 .text_error {
     color: var(--color-red);

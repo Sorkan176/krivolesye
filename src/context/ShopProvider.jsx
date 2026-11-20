@@ -84,6 +84,12 @@ export function ShopProvider({ children }) {
   useEffect(() => {
     if (loadingAuth) return;
 
+    if (!user) {
+      setCart([]);
+      setFavorites([]);
+      return;
+    }
+
     let cancelled = false;
 
     const syncData = async () => {
